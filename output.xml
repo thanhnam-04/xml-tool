@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presentation schemaVersion="1.0" width="1600" height="900" slideWidthInches="13.333" slideHeightInches="7.5">
+  <slide background="#1A0B3A">
+    <svg x="0.0" y="0.0" width="760.0" height="900.0" pixel_width="900" pixel_height="900">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;900&quot; height=&quot;900&quot; viewBox=&quot;0 0 900 900&quot; style=&quot;background: transparent;&quot;&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id=&quot;outer&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;#4A2C82&quot;/&gt;
+      &lt;stop offset=&quot;45%&quot; stop-color=&quot;#805AD5&quot;/&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;#B794F4&quot;/&gt;
+    &lt;/linearGradient&gt;
+    &lt;linearGradient id=&quot;middle&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;0.9&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;#6B46C1&quot;/&gt;
+      &lt;stop offset=&quot;55%&quot; stop-color=&quot;#9F7AEA&quot;/&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;#D6BCFA&quot;/&gt;
+    &lt;/linearGradient&gt;
+    &lt;linearGradient id=&quot;inner&quot; x1=&quot;0&quot; y1=&quot;0&quot; x2=&quot;1&quot; y2=&quot;1&quot;&gt;
+      &lt;stop offset=&quot;0%&quot; stop-color=&quot;#805AD5&quot;/&gt;
+      &lt;stop offset=&quot;50%&quot; stop-color=&quot;#B794F4&quot;/&gt;
+      &lt;stop offset=&quot;100%&quot; stop-color=&quot;#E9D8FD&quot;/&gt;
+    &lt;/linearGradient&gt;
+    &lt;filter id=&quot;softGlow&quot; x=&quot;-30%&quot; y=&quot;-30%&quot; width=&quot;160%&quot; height=&quot;160%&quot;&gt;
+      &lt;feGaussianBlur stdDeviation=&quot;10&quot; result=&quot;blur&quot;/&gt;
+      &lt;feMerge&gt;
+        &lt;feMergeNode in=&quot;blur&quot;/&gt;
+        &lt;feMergeNode in=&quot;SourceGraphic&quot;/&gt;
+      &lt;/feMerge&gt;
+    &lt;/filter&gt;
+  &lt;/defs&gt;
+
+  &lt;g opacity=&quot;0.18&quot;&gt;
+    &lt;rect x=&quot;360&quot; y=&quot;58&quot; width=&quot;250&quot; height=&quot;190&quot; fill=&quot;#B794F4&quot;/&gt;
+    &lt;rect x=&quot;360&quot; y=&quot;384&quot; width=&quot;250&quot; height=&quot;190&quot; fill=&quot;#9F7AEA&quot;/&gt;
+    &lt;rect x=&quot;108&quot; y=&quot;575&quot; width=&quot;205&quot; height=&quot;300&quot; fill=&quot;#8B5CF6&quot;/&gt;
+  &lt;/g&gt;
+
+  &lt;path
+    d=&quot;M0,210 C185,35 420,28 620,58 C650,332 540,602 305,760 C170,850 63,880 0,882 Z&quot;
+    fill=&quot;url(#outer)&quot;
+    opacity=&quot;0.96&quot;/&gt;
+
+  &lt;path
+    d=&quot;M0,410 C180,210 382,194 590,250 C548,470 438,635 258,760 C132,846 52,870 0,876 Z&quot;
+    fill=&quot;url(#middle)&quot;
+    opacity=&quot;0.98&quot;/&gt;
+
+  &lt;path
+    d=&quot;M0,640 C154,410 338,350 535,384 C470,580 363,704 211,798 C112,858 44,874 0,878 Z&quot;
+    fill=&quot;url(#inner)&quot;
+    opacity=&quot;0.98&quot;
+    filter=&quot;url(#softGlow)&quot;/&gt;
+
+  &lt;path
+    d=&quot;M150,900 C145,750 200,636 312,598 C390,571 457,590 510,640 C412,734 302,824 150,900 Z&quot;
+    fill=&quot;#8B5CF6&quot;
+    opacity=&quot;0.82&quot;/&gt;
+&lt;/svg&gt;</svg>
+    <textbox x="815.0" y="105.0" width="58.0" height="58" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="42" min_font_size="42" bold="true" color="#F7F2FF" align="center" vertical_align="middle" single_line="true" max_lines="1" overflow="clip" reflow_on_resize="true" line_spacing="1.0" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">✣</textbox>
+    <textbox x="891.0" y="110.0" width="260" height="50" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="30" min_font_size="22" bold="true" color="#F7F2FF" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">FORGE</textbox>
+    <textbox x="815.0" y="301.95" width="715.0" height="230.1" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="63.5" min_font_size="63.5" color="#F7F2FF" align="left" vertical_align="top" single_line="false" max_lines="2" overflow="clip" reflow_on_resize="true" line_spacing="0.95" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">IT Software Sales Proposal</textbox>
+    <shape type="rect" x="815.0" y="552.05" width="715.0" height="91.0" fill="#6545A2" line_color="none"/>
+    <textbox x="849.0" y="564.05" width="647.0" height="67.0" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="17.0" min_font_size="17.0" color="#FFFFFF" align="center" vertical_align="top" single_line="false" max_lines="2" overflow="clip" reflow_on_resize="true" line_spacing="1.0" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Modern productivity for secure, high-performing teams</textbox>
+    <textbox x="815.0" y="825.0" width="470.0" height="42" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="22" min_font_size="16" color="#F7F2FF" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Prepared for Value Financials</textbox>
+    <textbox x="1330.0" y="825.0" width="200.0" height="42" font="Arial" font_path="C:\Windows\Fonts\arial.ttf" size="22" min_font_size="16" color="#F7F2FF" align="right" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">June 2035</textbox>
+  </slide>
+</presentation>

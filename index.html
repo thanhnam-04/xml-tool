@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>XML Slide Viewer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 30px;
+      background: #e2e8f0;
+      font-family: Arial, sans-serif;
+    }
+
+    #presentation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .slide {
+      position: relative;
+      width: 1200px;
+      height: 675px;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.25);
+    }
+
+    .slide-title {
+      position: absolute;
+      left: 70px;
+      top: 60px;
+      width: 700px;
+      margin: 0;
+      color: white;
+      font-size: 48px;
+      line-height: 1.2;
+    }
+
+    .slide-subtitle {
+      position: absolute;
+      left: 70px;
+      top: 140px;
+      width: 550px;
+      margin: 0;
+      color: #cbd5e1;
+      font-size: 24px;
+      line-height: 1.5;
+    }
+
+    .slide-image {
+      position: absolute;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .slide-card {
+      position: absolute;
+      padding: 25px;
+      border-radius: 20px;
+      color: white;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .slide-card h2 {
+      margin: 0 0 16px;
+      font-size: 26px;
+    }
+
+    .slide-card p {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.5;
+      color: #cbd5e1;
+    }
+
+    .error {
+      padding: 20px;
+      background: #fee2e2;
+      color: #991b1b;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="presentation"></div>
+
+  <script>
+    async function loadPresentation() {
+      const container = document.getElementById("presentation");
+
+      try {
+        const response = await fetch("./slides.xml");
+
+        if (!response.ok) {
+          throw new Error(
+            `Không đọc được XML: HTTP ${response.status}`
+          );
+        }
+
+        const xmlText = await response.text();
+
+        const parser = new DOMParser();
+        const xmlDocument = parser.parseFromString(
+          xmlText,
+          "application/xml"
+        );
+
+        const parserError =
+          xmlDocument.querySelector("parsererror");
+
+        if (parserError) {
+          throw new Error("File XML không đúng cú pháp");
+        }
+
+        const slides = xmlDocument.querySelectorAll("slide");
+
+        slides.forEach((slideNode) => {
+          const slideElement = createSlide(slideNode);
+          container.appendChild(slideElement);
+        });
+      } catch (error) {
+        container.innerHTML = `
+          <div class="error">
+            ${escapeHtml(error.message)}
+          </div>
+        `;
+      }
+    }
+
+    function createSlide(slideNode) {
+      const slideElement = document.createElement("section");
+      slideElement.className = "slide";
+
+      slideElement.style.background =
+        slideNode.getAttribute("background") || "#ffffff";
+
+      renderTitle(slideNode, slideElement);
+      renderSubtitle(slideNode, slideElement);
+      renderImages(slideNode, slideElement);
+      renderCards(slideNode, slideElement);
+
+      return slideElement;
+    }
+
+    function renderTitle(slideNode, slideElement) {
+      const titleNode = slideNode.querySelector(":scope > title");
+
+      if (!titleNode) {
+        return;
+      }
+
+      const titleElement = document.createElement("h1");
+      titleElement.className = "slide-title";
+      titleElement.textContent = titleNode.textContent.trim();
+
+      titleElement.style.color =
+        titleNode.getAttribute("color") || "#ffffff";
+
+      slideElement.appendChild(titleElement);
+    }
+
+    function renderSubtitle(slideNode, slideElement) {
+      const subtitleNode =
+        slideNode.querySelector(":scope > subtitle");
+
+      if (!subtitleNode) {
+        return;
+      }
+
+      const subtitleElement = document.createElement("p");
+      subtitleElement.className = "slide-subtitle";
+      subtitleElement.textContent =
+        subtitleNode.textContent.trim();
+
+      subtitleElement.style.color =
+        subtitleNode.getAttribute("color") || "#cbd5e1";
+
+      slideElement.appendChild(subtitleElement);
+    }
+
+    function renderImages(slideNode, slideElement) {
+      const imageNodes =
+        slideNode.querySelectorAll(":scope > image");
+
+      imageNodes.forEach((imageNode) => {
+        const imageElement = document.createElement("img");
+
+        imageElement.className = "slide-image";
+        imageElement.src = imageNode.getAttribute("src");
+        imageElement.alt =
+          imageNode.getAttribute("alt") || "";
+
+        applyPosition(imageElement, imageNode);
+
+        slideElement.appendChild(imageElement);
+      });
+    }
+
+    function renderCards(slideNode, slideElement) {
+      const cardNodes =
+        slideNode.querySelectorAll(":scope > card");
+
+      cardNodes.forEach((cardNode) => {
+        const cardElement = document.createElement("div");
+        cardElement.className = "slide-card";
+
+        cardElement.style.background =
+          cardNode.getAttribute("background") || "#1e293b";
+
+        applyPosition(cardElement, cardNode);
+
+        const titleNode = cardNode.querySelector("title");
+        const descriptionNode =
+          cardNode.querySelector("description");
+
+        if (titleNode) {
+          const heading = document.createElement("h2");
+          heading.textContent = titleNode.textContent.trim();
+          cardElement.appendChild(heading);
+        }
+
+        if (descriptionNode) {
+          const paragraph = document.createElement("p");
+          paragraph.textContent =
+            descriptionNode.textContent.trim();
+
+          cardElement.appendChild(paragraph);
+        }
+
+        slideElement.appendChild(cardElement);
+      });
+    }
+
+    function applyPosition(element, xmlNode) {
+      const x = xmlNode.getAttribute("x") || 0;
+      const y = xmlNode.getAttribute("y") || 0;
+      const width = xmlNode.getAttribute("width") || 200;
+      const height = xmlNode.getAttribute("height") || 100;
+
+      element.style.left = `${x}px`;
+      element.style.top = `${y}px`;
+      element.style.width = `${width}px`;
+      element.style.height = `${height}px`;
+    }
+
+    function escapeHtml(value) {
+      const element = document.createElement("div");
+      element.textContent = value;
+      return element.innerHTML;
+    }
+
+    loadPresentation();
+  </script>
+</body>
+</html>

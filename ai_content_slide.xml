@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<presentation schemaVersion="1.0" width="1600" height="900" slideWidthInches="13.333" slideHeightInches="7.5">
+  <slide background="#E3EAED">
+    <image src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=85&amp;w=1400&amp;auto=format&amp;fit=crop" x="860" y="30" width="700" height="820"/>
+    <textbox x="120" y="76.0" width="690" height="328.15999999999997" font="Arial" size="62.0" min_font_size="62.0" bold="true" color="#101010" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="clip" line_spacing="0.92" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">THE SLIDE
+TITLE GOES
+HERE!</textbox>
+    <textbox x="120" y="418.15999999999997" width="690" height="94.2" font="Arial" size="22.0" min_font_size="22.0" color="#1B1B1B" align="left" vertical_align="top" single_line="false" max_lines="2" overflow="clip" line_spacing="1.05" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Do you know what helps you make your
+point clear? Lists like this one:</textbox>
+    <textbox x="120" y="526.36" width="690" height="142.07999999999998" font="Arial" size="22.0" min_font_size="22.0" color="#1B1B1B" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="clip" line_spacing="1.08" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">• They’re simple
+• You can organize your ideas clearly
+• You’ll never forget to buy milk!</textbox>
+    <textbox x="120" y="682.44" width="690" height="138.3" font="Arial" size="22.0" min_font_size="22.0" color="#1B1B1B" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="clip" line_spacing="1.05" safety_ratio="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">You can replace the image. Just
+right-click on it and select “Replace
+image”</textbox>
+  </slide>
+</presentation>
