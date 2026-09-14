@@ -1004,9 +1004,499 @@ def generate_agile_customer_journey_slide_xml(
     raw_xml = ET.tostring(presentation, encoding="utf-8")
     xml_content = minidom.parseString(raw_xml).toprettyxml(indent="  ", encoding="UTF-8").decode("utf-8")
     return xml_content
-    
+
+def generate_agile_values_in_practice_slide_xml(
+    title: str = "AGILE VALUES\nIN PRACTICE",
+    items: list[dict[str, str]]  = [
+            {
+                "title": "Collaborative Culture",
+                "description": "Team members work\nclosely together and with\nstakeholders",
+                "color": "#FFC400",
+            },
+            {
+                "title": "Transparent\nCommunication",
+                "description": "Openly share progress and\nchallenges to build trust.",
+                "color": "#A7D348",
+            },
+            {
+                "title": "Self-Organization",
+                "description": "Teams manage their own\nwork and problem-solving\nprocesses.",
+                "color": "#10CFA7",
+            },
+            {
+                "title": "Adaptability",
+                "description": "The team can pivot\nquickly based on new\ninformation.",
+                "color": "#8A79DA",
+            },
+            {
+                "title": "Customer Focus",
+                "description": "The team's primary goal\nis to deliver value to the\ncustomer.",
+                "color": "#4699E7",
+            },
+            {
+                "title": "Iterative Delivery",
+                "description": "Projects are broken into\nsmall, manageable\ncycles.",
+                "color": "#15B7CF",
+            },
+        ],
+    background_color: str = "#F4F5F7",
+    title_color: str = "#111111",
+    text_color: str = "#1A1A1A",
+    connector_color: str = "#CDD3DC",
+    card_color: str = "#FBFBFC",
+) -> str:
+    import math
+
+    if items is None:
+        items = [
+            {
+                "title": "Collaborative Culture",
+                "description": "Team members work\nclosely together and with\nstakeholders",
+                "color": "#FFC400",
+            },
+            {
+                "title": "Transparent\nCommunication",
+                "description": "Openly share progress and\nchallenges to build trust.",
+                "color": "#A7D348",
+            },
+            {
+                "title": "Self-Organization",
+                "description": "Teams manage their own\nwork and problem-solving\nprocesses.",
+                "color": "#10CFA7",
+            },
+            {
+                "title": "Adaptability",
+                "description": "The team can pivot\nquickly based on new\ninformation.",
+                "color": "#8A79DA",
+            },
+            {
+                "title": "Customer Focus",
+                "description": "The team's primary goal\nis to deliver value to the\ncustomer.",
+                "color": "#4699E7",
+            },
+            {
+                "title": "Iterative Delivery",
+                "description": "Projects are broken into\nsmall, manageable\ncycles.",
+                "color": "#15B7CF",
+            },
+        ]
+
+    raw_items = items if isinstance(items, (list, tuple)) else [items]
+    if not 2 <= len(raw_items) <= 6:
+        raise ValueError("Layout này hỗ trợ từ 2 đến 6 items.")
+    item_count = len(raw_items)
+
+    default_colors = ["#FFC400", "#A7D348", "#10CFA7", "#8A79DA", "#4699E7", "#15B7CF"]
+    default_icons = ["collaboration", "communication", "organization", "adaptability", "customer", "delivery"]
+
+    def shorten_text(value: str, max_words: int, max_chars: int) -> str:
+        original = " ".join(str(value or "").split())
+        words = original.split()
+        selected: list[str] = []
+        for word in words:
+            candidate = " ".join([*selected, word])
+            if len(selected) >= max_words or len(candidate) > max_chars:
+                break
+            selected.append(word)
+        result = " ".join(selected)
+        if result != original:
+            result = result.rstrip(" ,.;:-") + "…"
+        return result
+
+    normalized_items = []
+    for index, raw_item in enumerate(raw_items):
+        item = raw_item if isinstance(raw_item, dict) else {}
+        color = str(item.get("color") or default_colors[index]).strip()
+        if not color.startswith("#"):
+            color = "#" + color
+        normalized_items.append(
+            {
+                "title": shorten_text(item.get("title") or f"Item {index + 1}", 12, 92),
+                "description": shorten_text(item.get("description") or "", 42, 240),
+                "color": color,
+                "icon": str(item.get("icon") or default_icons[index]).strip().lower(),
+            }
+        )
+
+    center_title = shorten_text(title, 20, 120)
+    if len(center_title) <= 32:
+        inner_r, outer_r = 145.0, 235.0
+        center_title_size, center_title_min_size, center_title_max_lines = 24, 18.5, 3
+    elif len(center_title) <= 62:
+        inner_r, outer_r = 165.0, 255.0
+        center_title_size, center_title_min_size, center_title_max_lines = 22, 16.5, 4
+    else:
+        inner_r, outer_r = 185.0, 275.0
+        center_title_size, center_title_min_size, center_title_max_lines = 19.5, 14.5, 5
+
+    longest_title = max(len(item["title"]) for item in normalized_items)
+    longest_description = max(len(item["description"]) for item in normalized_items)
+    content_density = max(longest_title / 34.0, longest_description / 95.0)
+    card_width = 430 if content_density <= 1.0 else 450 if content_density <= 1.45 else 470
+    if item_count <= 3:
+        card_width = max(card_width, 480)
+    left_card_x = 30
+    right_card_x = 1600 - 30 - card_width
+    text_area_width = card_width - 164
+
+    def estimated_lines(text: str, chars_per_line: int, maximum: int) -> int:
+        return min(maximum, max(1, math.ceil(len(text) / max(1, chars_per_line))))
+
+    # PowerPoint's text metrics are wider than a simple character average,
+    # especially for bold headings. Estimate conservatively so a title that
+    # wraps during conversion already has enough vertical room.
+    title_chars_per_line = max(20, round(text_area_width / 12.0))
+    description_chars_per_line = max(28, round(text_area_width / 7.0))
+    item_metrics = []
+    for item in normalized_items:
+        title_lines = estimated_lines(item["title"], title_chars_per_line, 3)
+        description_lines = estimated_lines(item["description"], description_chars_per_line, 4)
+        desired_height = 50 + title_lines * 24 + description_lines * 18
+        item_metrics.append(
+            {
+                "title_lines": title_lines,
+                "description_lines": description_lines,
+                "height": max(138, min(188, desired_height)),
+            }
+        )
+
+    # Clockwise card positions. Odd counts receive one top-centred card,
+    # avoiding the visual imbalance of putting more cards on one side.
+    layout_by_count = {
+        2: [("left", 450), ("right", 450)],
+        3: [("top", 0), ("right", 650), ("left", 650)],
+        4: [("left", 275), ("right", 275), ("right", 625), ("left", 625)],
+        5: [("top", 0), ("right", 350), ("right", 650), ("left", 650), ("left", 350)],
+        6: [("left", 205), ("right", 205), ("right", 450), ("right", 695), ("left", 695), ("left", 450)],
+    }
+    card_layout = layout_by_count[item_count]
+    card_specs: dict[int, dict[str, float]] = {}
+    card_sides: dict[int, str] = {}
+    for index, (side, center_y) in enumerate(card_layout):
+        card_height = item_metrics[index]["height"]
+        if side == "top":
+            top_width = min(580, card_width + 100)
+            card_specs[index] = {
+                "x": (1600 - top_width) / 2.0,
+                "y": 24.0,
+                "w": top_width,
+                "h": card_height,
+            }
+        else:
+            card_x = left_card_x if side == "left" else right_card_x
+            card_y = max(30.0, min(870.0 - card_height, center_y - card_height / 2.0))
+            card_specs[index] = {"x": card_x, "y": card_y, "w": card_width, "h": card_height}
+        card_sides[index] = side
+
+    segment_step = 360.0 / item_count
+    first_segment_center = -90.0 if item_count % 2 else -90.0 - segment_step / 2.0
+    segment_centers = [first_segment_center + index * segment_step for index in range(item_count)]
+
+    presentation = ET.Element(
+        "presentation",
+        {
+            "schemaVersion": "1.0",
+            "width": "1600",
+            "height": "900",
+            "slideWidthInches": "13.333",
+            "slideHeightInches": "7.5",
+        },
+    )
+    slide = ET.SubElement(presentation, "slide", {"background": background_color})
+
+    def add(tag: str, **attrs):
+        return ET.SubElement(slide, tag, {k: str(v) for k, v in attrs.items() if v is not None})
+
+    def textbox(text: str, **attrs):
+        node = add("textbox", **attrs)
+        node.text = str(text)
+        return node
+
+    add("shape", type="rectangle", x=0, y=0, width=1600, height=900, fill=background_color, line_color="none")
+
+    # =========================================================
+    # Dynamic connectors
+    # =========================================================
+
+    wheel_x = 505.0
+    wheel_center_y = 450.0
+    if item_count % 2:
+        top_card = card_specs[0]
+        wheel_center_y = max(
+            wheel_center_y,
+            top_card["y"] + top_card["h"] + outer_r + 28.0,
+        )
+        wheel_center_y = min(wheel_center_y, 900.0 - outer_r - 35.0)
+    wheel_y = wheel_center_y - 295.0
+    wheel_center_x = wheel_x + 295.0
+
+    connectors = add("svg", x=0, y=0, width=1600, height=900, pixel_width=1600, pixel_height=900)
+    connector_parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">',
+        f'<g fill="none" stroke="{connector_color}" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 8" opacity="0.9">',
+    ]
+    for index, item in enumerate(normalized_items):
+        spec = card_specs[index]
+        side = card_sides[index]
+        card_center_x = spec["x"] + spec["w"] / 2.0
+        card_center_y = spec["y"] + spec["h"] / 2.0
+        angle = math.radians(segment_centers[index])
+        target_x = wheel_center_x + (outer_r + 5.0) * math.cos(angle)
+        target_y = wheel_center_y + (outer_r + 5.0) * math.sin(angle)
+        if side == "left":
+            start_x, start_y = spec["x"] + spec["w"], card_center_y
+        elif side == "right":
+            start_x, start_y = spec["x"], card_center_y
+        else:
+            start_x, start_y = card_center_x, spec["y"] + spec["h"]
+        connector_parts.append(
+            f'<path d="M {start_x:.2f},{start_y:.2f} L {target_x:.2f},{target_y:.2f}"/>'
+        )
+    connector_parts.append("</g></svg>")
+    connectors.text = "".join(connector_parts)
+
+    # =========================================================
+    # Central segmented ring
+    # =========================================================
+
+    wheel = add("svg", x=wheel_x, y=wheel_y, width=590, height=590, pixel_width=800, pixel_height=800)
+
+    cx = 295.0
+    cy = 295.0
+    gap_deg = 4.0
+
+    def polar(radius: float, angle_deg: float):
+        rad = math.radians(angle_deg)
+        return cx + radius * math.cos(rad), cy + radius * math.sin(rad)
+
+    def annular_segment_path(start_angle: float, end_angle: float):
+        outer_start = polar(outer_r, start_angle)
+        outer_end = polar(outer_r, end_angle)
+        inner_end = polar(inner_r, end_angle)
+        inner_start = polar(inner_r, start_angle)
+        large_arc = 1 if abs(end_angle - start_angle) > 180 else 0
+
+        return (
+            f"M {outer_start[0]:.2f},{outer_start[1]:.2f} "
+            f"A {outer_r:.2f},{outer_r:.2f} 0 {large_arc} 1 {outer_end[0]:.2f},{outer_end[1]:.2f} "
+            f"L {inner_end[0]:.2f},{inner_end[1]:.2f} "
+            f"A {inner_r:.2f},{inner_r:.2f} 0 {large_arc} 0 {inner_start[0]:.2f},{inner_start[1]:.2f} Z"
+        )
+
+    wheel_parts = [
+        '<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 590 590">',
+        '<defs><filter id="practiceShadow" x="-30%" y="-30%" width="160%" height="160%">'
+        '<feDropShadow dx="0" dy="7" stdDeviation="10" flood-color="#283244" flood-opacity="0.12"/>'
+        '</filter></defs><g filter="url(#practiceShadow)">',
+    ]
+
+    segment_half = segment_step / 2.0
+    for index, center_angle in enumerate(segment_centers):
+        item = normalized_items[index]
+        start_angle = center_angle - segment_half + gap_deg / 2
+        end_angle = center_angle + segment_half - gap_deg / 2
+        wheel_parts.append(f'<path d="{annular_segment_path(start_angle, end_angle)}" fill="{item["color"]}"/>')
+
+    wheel_parts.append(f'<circle cx="{cx}" cy="{cy}" r="{inner_r + 8}" fill="#FFFFFF"/>')
+    wheel_parts.append("</g></svg>")
+    wheel.text = "".join(wheel_parts)
+
+    hub_radius = inner_r + 8.0
+    center_box_width = 2.0 * hub_radius - 22.0
+    center_box_height = 2.0 * hub_radius - 30.0
+    textbox(
+        center_title,
+        x=wheel_center_x - center_box_width / 2.0,
+        y=wheel_center_y - center_box_height / 2.0,
+        width=center_box_width,
+        height=center_box_height,
+        font="Arial",
+        size=center_title_size,
+        min_font_size=center_title_min_size,
+        color=title_color,
+        bold="true",
+        italic="false",
+        align="center",
+        vertical_align="middle",
+        single_line="false",
+        max_lines=center_title_max_lines,
+        overflow="shrink",
+        reflow_on_resize="true",
+        line_spacing=1.02,
+        margin_left=0,
+        margin_right=0,
+        margin_top=0,
+        margin_bottom=0,
+    )
+
+    # =========================================================
+    # Icon SVG helpers
+    # =========================================================
+
+    def make_icon_svg(icon_name: str, color: str) -> str:
+        aliases = {
+            "team": "collaboration",
+            "people": "collaboration",
+            "transparent": "communication",
+            "chat": "communication",
+            "self-organization": "organization",
+            "workflow": "organization",
+            "adapt": "adaptability",
+            "refresh": "adaptability",
+            "target": "customer",
+            "focus": "customer",
+            "iteration": "delivery",
+            "release": "delivery",
+        }
+        icon_name = aliases.get(icon_name, icon_name)
+        paths = {
+            "collaboration": """
+  <circle cx="32" cy="18" r="7"/><circle cx="13" cy="26" r="5"/><circle cx="51" cy="26" r="5"/>
+  <path d="M20 55V41c0-8 5-13 12-13s12 5 12 13v14"/>
+  <path d="M4 53V42c0-6 4-10 9-10 3 0 6 1 8 4M60 53V42c0-6-4-10-9-10-3 0-6 1-8 4"/>
+""",
+            "communication": """
+  <path d="M8 13h34a6 6 0 0 1 6 6v19a6 6 0 0 1-6 6H25L14 53v-9H8a6 6 0 0 1-6-6V19a6 6 0 0 1 6-6z"/>
+  <path d="M15 26h21M15 34h15M48 28h7a6 6 0 0 1 6 6v19l-8-7"/>
+""",
+            "organization": """
+  <circle cx="32" cy="17" r="7"/><circle cx="13" cy="47" r="7"/><circle cx="51" cy="47" r="7"/>
+  <path d="M32 24v8M13 40v-8h38v8"/>
+  <path d="M28 17h8M13 43v8M47 47h8"/>
+""",
+            "adaptability": """
+  <path d="M50 21A21 21 0 0 0 14 17"/><path d="M14 17V7M14 17h10"/>
+  <path d="M14 43a21 21 0 0 0 36 4"/><path d="M50 47v10M50 47H40"/>
+  <path d="M25 25h14v14H25z"/>
+""",
+            "customer": """
+  <circle cx="30" cy="32" r="20"/><circle cx="30" cy="32" r="11"/><circle cx="30" cy="32" r="3"/>
+  <path d="M42 20L57 5M48 5h9v9"/>
+""",
+            "delivery": """
+  <path d="M8 20L32 8l24 12-24 12zM8 20v25l24 12 24-12V20M32 32v25"/>
+  <path d="M40 43l5 5 11-13"/>
+""",
+        }
+        icon_paths = paths.get(icon_name, paths["collaboration"])
+        return f"""
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <g fill="none" stroke="{color}" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+    {icon_paths}
+  </g>
+</svg>
+"""
+
+    # =========================================================
+    # Card renderer
+    # =========================================================
+
+    def render_card(index: int, side: str):
+        item = normalized_items[index]
+        metrics = item_metrics[index]
+        spec = card_specs[index]
+        card_x, card_y, card_w, card_h = spec["x"], spec["y"], spec["w"], spec["h"]
+
+        add("shape", type="rounded_rectangle", x=card_x + 4, y=card_y + 6, width=card_w, height=card_h, fill="#DFE3E8", line_color="none")
+        add("shape", type="rounded_rectangle", x=card_x, y=card_y, width=card_w, height=card_h, fill=card_color, line_color="#E2E6EA", line_width=1)
+
+        if side == "top":
+            add("shape", type="rounded_rectangle", x=card_x, y=card_y + card_h - 9, width=card_w, height=9, fill=item["color"], line_color="none")
+        else:
+            accent_x = card_x + card_w - 9 if side == "left" else card_x
+            add("shape", type="rounded_rectangle", x=accent_x, y=card_y, width=9, height=card_h, fill=item["color"], line_color="none")
+
+        badge_size = min(88.0, card_h - 34.0)
+        badge_y = card_y + (card_h - badge_size) / 2.0
+        badge_x = card_x + card_w - badge_size - 28.0 if side == "left" else card_x + 28.0
+        add("shape", type="circle", x=badge_x, y=badge_y, width=badge_size, height=badge_size, fill="#FFFFFF", line_color=item["color"], line_width=3)
+
+        icon_size = badge_size * 0.56
+        icon = add(
+            "svg",
+            x=badge_x + (badge_size - icon_size) / 2.0,
+            y=badge_y + (badge_size - icon_size) / 2.0,
+            width=icon_size,
+            height=icon_size,
+            pixel_width=120,
+            pixel_height=120,
+        )
+        icon.text = make_icon_svg(item["icon"], item["color"])
+
+        if side == "left":
+            text_x = card_x + 24.0
+            text_width = badge_x - text_x - 22.0
+            text_align = "right"
+        else:
+            text_x = badge_x + badge_size + 24.0
+            text_width = card_x + card_w - 24.0 - text_x
+            text_align = "left"
+
+        title_height = metrics["title_lines"] * 24.0 + 4.0
+        description_height = metrics["description_lines"] * 18.0 + 6.0
+        block_height = title_height + 4.0 + description_height
+        text_top = card_y + (card_h - block_height) / 2.0
+
+        textbox(
+            item["title"],
+            x=text_x,
+            y=text_top,
+            width=text_width,
+            height=title_height,
+            font="Arial",
+            size=17,
+            min_font_size=12.5,
+            color=text_color,
+            bold="true",
+            italic="false",
+            align=text_align,
+            vertical_align="middle",
+            single_line="false",
+            max_lines=metrics["title_lines"],
+            overflow="shrink",
+            reflow_on_resize="true",
+            line_spacing=1.0,
+            margin_left=0,
+            margin_right=0,
+            margin_top=0,
+            margin_bottom=0,
+        )
+
+        textbox(
+            item["description"],
+            x=text_x,
+            y=text_top + title_height + 4.0,
+            width=text_width,
+            height=description_height,
+            font="Arial",
+            size=13,
+            min_font_size=9.5,
+            color=text_color,
+            bold="false",
+            italic="false",
+            align=text_align,
+            vertical_align="top",
+            single_line="false",
+            max_lines=metrics["description_lines"],
+            overflow="shrink",
+            reflow_on_resize="true",
+            line_spacing=1.0,
+            margin_left=0,
+            margin_right=0,
+            margin_top=0,
+            margin_bottom=0,
+        )
+
+    for item_index in range(item_count):
+        render_card(item_index, card_sides[item_index])
+
+    raw_xml = ET.tostring(presentation, encoding="utf-8")
+    xml_content = minidom.parseString(raw_xml).toprettyxml(indent="  ", encoding="UTF-8").decode("utf-8")
+    return xml_content    
+
+
 if __name__ == "__main__":
-    xml_content = generate_agile_customer_journey_slide_xml()
+    xml_content = generate_agile_values_in_practice_slide_xml()
 
     Path("output.xml").write_text(
         xml_content,

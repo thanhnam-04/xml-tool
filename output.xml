@@ -1,90 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presentation schemaVersion="1.0" width="1600" height="900" slideWidthInches="13.333" slideHeightInches="7.5">
-  <slide background="#F3F4F6">
-    <shape type="rectangle" x="0" y="0" width="1600" height="900" fill="#F3F4F6" line_color="none"/>
-    <svg x="40" y="90" width="720" height="720" pixel_width="900" pixel_height="900">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;900&quot; height=&quot;900&quot; viewBox=&quot;0 0 900 900&quot;&gt;&lt;defs&gt;&lt;filter id=&quot;hubShadow&quot; x=&quot;-30%&quot; y=&quot;-30%&quot; width=&quot;160%&quot; height=&quot;160%&quot;&gt;&lt;feDropShadow dx=&quot;0&quot; dy=&quot;8&quot; stdDeviation=&quot;12&quot; flood-color=&quot;#253044&quot; flood-opacity=&quot;0.12&quot;/&gt;&lt;/filter&gt;&lt;/defs&gt;&lt;path d=&quot;M 450.00,125.00 A 325.00,325.00 0 0 1 545.02,139.20 L 584.32,125.72 L 602.58,163.04 A 325.00,325.00 0 0 1 679.81,220.19 L 594.96,305.04 A 205.00,205.00 0 0 0 450.00,245.00 Z&quot; fill=&quot;#FFC400&quot; stroke=&quot;#F3F4F6&quot; stroke-width=&quot;4&quot;/&gt;&lt;path d=&quot;M 679.81,220.19 A 325.00,325.00 0 0 1 736.96,297.42 L 774.28,315.68 L 760.80,354.98 A 325.00,325.00 0 0 1 775.00,450.00 L 655.00,450.00 A 205.00,205.00 0 0 0 594.96,305.04 Z&quot; fill=&quot;#A6D24A&quot; stroke=&quot;#F3F4F6&quot; stroke-width=&quot;4&quot;/&gt;&lt;path d=&quot;M 775.00,450.00 A 325.00,325.00 0 0 1 760.80,545.02 L 774.28,584.32 L 736.96,602.58 A 325.00,325.00 0 0 1 679.81,679.81 L 594.96,594.96 A 205.00,205.00 0 0 0 655.00,450.00 Z&quot; fill=&quot;#12CDA5&quot; stroke=&quot;#F3F4F6&quot; stroke-width=&quot;4&quot;/&gt;&lt;path d=&quot;M 679.81,679.81 A 325.00,325.00 0 0 1 602.58,736.96 L 584.32,774.28 L 545.02,760.80 A 325.00,325.00 0 0 1 450.00,775.00 L 450.00,655.00 A 205.00,205.00 0 0 0 594.96,594.96 Z&quot; fill=&quot;#18B7CF&quot; stroke=&quot;#F3F4F6&quot; stroke-width=&quot;4&quot;/&gt;&lt;circle cx=&quot;450.0&quot; cy=&quot;450.0&quot; r=&quot;207.0&quot; fill=&quot;#FFFFFF&quot; filter=&quot;url(#hubShadow)&quot;/&gt;&lt;/svg&gt;</svg>
-    <textbox x="239.4" y="302.4" width="321.2" height="295.2" font="Arial" size="23" min_font_size="17" color="#000000" bold="true" italic="false" align="center" vertical_align="middle" single_line="false" max_lines="4" overflow="shrink" reflow_on_resize="true" line_spacing="1.05" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">AGILE AND THE CUSTOMER JOURNEY AGILE AND THE CUSTOMER JOURNEY</textbox>
-    <line x1="507.46" y1="190.57" x2="850" y2="150.0" color="#D6DAE0" width="1.6"/>
-    <shape type="circle" x="844" y="144.0" width="12" height="12" fill="#FFC400" line_color="#F3F4F6" line_width="2"/>
-    <line x1="659.43" y1="342.54" x2="850" y2="350.0" color="#D6DAE0" width="1.6"/>
-    <shape type="circle" x="844" y="344.0" width="12" height="12" fill="#A6D24A" line_color="#F3F4F6" line_width="2"/>
-    <line x1="659.43" y1="557.46" x2="850" y2="550.0" color="#D6DAE0" width="1.6"/>
-    <shape type="circle" x="844" y="544.0" width="12" height="12" fill="#12CDA5" line_color="#F3F4F6" line_width="2"/>
-    <line x1="507.46" y1="709.43" x2="850" y2="750.0" color="#D6DAE0" width="1.6"/>
-    <shape type="circle" x="844" y="744.0" width="12" height="12" fill="#18B7CF" line_color="#F3F4F6" line_width="2"/>
-    <shape type="rounded_rectangle" x="855" y="97.0" width="650" height="120" fill="#DDE1E6" line_color="none"/>
-    <shape type="rounded_rectangle" x="850" y="90.0" width="650" height="120" fill="#FFFFFF" line_color="#E2E5E9" line_width="1"/>
-    <shape type="rounded_rectangle" x="850" y="90.0" width="10" height="120" fill="#FFC400" line_color="none"/>
-    <shape type="circle" x="878.0" y="110.0" width="80.0" height="80.0" fill="#F8FAFC" line_color="#FFC400" line_width="3"/>
-    <svg x="895.6" y="127.6" width="44.800000000000004" height="44.800000000000004" pixel_width="120" pixel_height="120">
+  <slide background="#F4F5F7">
+    <shape type="rectangle" x="0" y="0" width="1600" height="900" fill="#F4F5F7" line_color="none"/>
+    <svg x="0" y="0" width="1600" height="900" pixel_width="1600" pixel_height="900">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;1600&quot; height=&quot;900&quot; viewBox=&quot;0 0 1600 900&quot;&gt;&lt;g fill=&quot;none&quot; stroke=&quot;#CDD3DC&quot; stroke-width=&quot;3&quot; stroke-linecap=&quot;round&quot; stroke-dasharray=&quot;8 8&quot; opacity=&quot;0.9&quot;&gt;&lt;path d=&quot;M 460.00,205.00 L 680.00,242.15&quot;/&gt;&lt;path d=&quot;M 1140.00,205.00 L 920.00,242.15&quot;/&gt;&lt;path d=&quot;M 1140.00,450.00 L 1040.00,450.00&quot;/&gt;&lt;path d=&quot;M 1140.00,695.00 L 920.00,657.85&quot;/&gt;&lt;path d=&quot;M 460.00,695.00 L 680.00,657.85&quot;/&gt;&lt;path d=&quot;M 460.00,450.00 L 560.00,450.00&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</svg>
+    <svg x="505.0" y="155.0" width="590" height="590" pixel_width="800" pixel_height="800">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;800&quot; height=&quot;800&quot; viewBox=&quot;0 0 590 590&quot;&gt;&lt;defs&gt;&lt;filter id=&quot;practiceShadow&quot; x=&quot;-30%&quot; y=&quot;-30%&quot; width=&quot;160%&quot; height=&quot;160%&quot;&gt;&lt;feDropShadow dx=&quot;0&quot; dy=&quot;7&quot; stdDeviation=&quot;10&quot; flood-color=&quot;#283244&quot; flood-opacity=&quot;0.12&quot;/&gt;&lt;/filter&gt;&lt;/defs&gt;&lt;g filter=&quot;url(#practiceShadow)&quot;&gt;&lt;path d=&quot;M 95.71,170.47 A 235.00,235.00 0 0 1 286.80,60.14 L 289.94,150.09 A 145.00,145.00 0 0 0 172.03,218.16 Z&quot; fill=&quot;#FFC400&quot;/&gt;&lt;path d=&quot;M 303.20,60.14 A 235.00,235.00 0 0 1 494.29,170.47 L 417.97,218.16 A 145.00,145.00 0 0 0 300.06,150.09 Z&quot; fill=&quot;#A7D348&quot;/&gt;&lt;path d=&quot;M 502.49,184.67 A 235.00,235.00 0 0 1 502.49,405.33 L 423.03,363.07 A 145.00,145.00 0 0 0 423.03,226.93 Z&quot; fill=&quot;#10CFA7&quot;/&gt;&lt;path d=&quot;M 494.29,419.53 A 235.00,235.00 0 0 1 303.20,529.86 L 300.06,439.91 A 145.00,145.00 0 0 0 417.97,371.84 Z&quot; fill=&quot;#8A79DA&quot;/&gt;&lt;path d=&quot;M 286.80,529.86 A 235.00,235.00 0 0 1 95.71,419.53 L 172.03,371.84 A 145.00,145.00 0 0 0 289.94,439.91 Z&quot; fill=&quot;#4699E7&quot;/&gt;&lt;path d=&quot;M 87.51,405.33 A 235.00,235.00 0 0 1 87.51,184.67 L 166.97,226.93 A 145.00,145.00 0 0 0 166.97,363.07 Z&quot; fill=&quot;#15B7CF&quot;/&gt;&lt;circle cx=&quot;295.0&quot; cy=&quot;295.0&quot; r=&quot;153.0&quot; fill=&quot;#FFFFFF&quot;/&gt;&lt;/g&gt;&lt;/svg&gt;</svg>
+    <textbox x="658.0" y="312.0" width="284.0" height="276.0" font="Arial" size="24" min_font_size="18.5" color="#111111" bold="true" italic="false" align="center" vertical_align="middle" single_line="false" max_lines="3" overflow="shrink" reflow_on_resize="true" line_spacing="1.02" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">AGILE VALUES IN PRACTICE</textbox>
+    <shape type="rounded_rectangle" x="34" y="142.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="30" y="136.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="451" y="136.0" width="9" height="138" fill="#FFC400" line_color="none"/>
+    <shape type="circle" x="344.0" y="161.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#FFC400" line_width="3"/>
+    <svg x="363.36" y="180.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
 &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
   &lt;g fill=&quot;none&quot; stroke=&quot;#FFC400&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
     
-  &lt;circle cx=&quot;25&quot; cy=&quot;23&quot; r=&quot;8&quot;/&gt;
-  &lt;path d=&quot;M12 45c1-9 6-14 13-14 5 0 9 2 11 6&quot;/&gt;
-  &lt;circle cx=&quot;43&quot; cy=&quot;41&quot; r=&quot;9&quot;/&gt;
-  &lt;path d=&quot;M50 48l8 8&quot;/&gt;
-  &lt;path d=&quot;M39 41h8M43 37v8&quot;/&gt;
+  &lt;circle cx=&quot;32&quot; cy=&quot;18&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;13&quot; cy=&quot;26&quot; r=&quot;5&quot;/&gt;&lt;circle cx=&quot;51&quot; cy=&quot;26&quot; r=&quot;5&quot;/&gt;
+  &lt;path d=&quot;M20 55V41c0-8 5-13 12-13s12 5 12 13v14&quot;/&gt;
+  &lt;path d=&quot;M4 53V42c0-6 4-10 9-10 3 0 6 1 8 4M60 53V42c0-6-4-10-9-10-3 0-6 1-8 4&quot;/&gt;
 
   &lt;/g&gt;
 &lt;/svg&gt;
 </svg>
-    <textbox x="986.0" y="106.0" width="486.0" height="40" font="Arial" size="18" min_font_size="13" color="#000000" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Discovery</textbox>
-    <textbox x="986.0" y="148.0" width="486.0" height="51.0" font="Arial" size="14" min_font_size="9.5" color="#111111" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="shrink" reflow_on_resize="true" line_spacing="1.02" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Teams work with customers to understand their specific problems.</textbox>
-    <shape type="rounded_rectangle" x="855" y="297.0" width="650" height="120" fill="#DDE1E6" line_color="none"/>
-    <shape type="rounded_rectangle" x="850" y="290.0" width="650" height="120" fill="#FFFFFF" line_color="#E2E5E9" line_width="1"/>
-    <shape type="rounded_rectangle" x="850" y="290.0" width="10" height="120" fill="#A6D24A" line_color="none"/>
-    <shape type="circle" x="878.0" y="310.0" width="80.0" height="80.0" fill="#F8FAFC" line_color="#A6D24A" line_width="3"/>
-    <svg x="895.6" y="327.6" width="44.800000000000004" height="44.800000000000004" pixel_width="120" pixel_height="120">
+    <textbox x="54.0" y="168.0" width="268.0" height="28.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="right" vertical_align="middle" single_line="false" max_lines="1" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Collaborative Culture</textbox>
+    <textbox x="54.0" y="200.0" width="268.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="right" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Team members work closely together and with stakeholders</textbox>
+    <shape type="rounded_rectangle" x="1144" y="142.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="1140" y="136.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="1140" y="136.0" width="9" height="138" fill="#A7D348" line_color="none"/>
+    <shape type="circle" x="1168.0" y="161.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#A7D348" line_width="3"/>
+    <svg x="1187.36" y="180.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
 &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
-  &lt;g fill=&quot;none&quot; stroke=&quot;#A6D24A&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#A7D348&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
     
-  &lt;path d=&quot;M49 22A20 20 0 0 0 15 18&quot;/&gt;
-  &lt;path d=&quot;M15 18v-9M15 18h9&quot;/&gt;
-  &lt;path d=&quot;M15 42a20 20 0 0 0 34 4&quot;/&gt;
-  &lt;path d=&quot;M49 46v9M49 46h-9&quot;/&gt;
+  &lt;path d=&quot;M8 13h34a6 6 0 0 1 6 6v19a6 6 0 0 1-6 6H25L14 53v-9H8a6 6 0 0 1-6-6V19a6 6 0 0 1 6-6z&quot;/&gt;
+  &lt;path d=&quot;M15 26h21M15 34h15M48 28h7a6 6 0 0 1 6 6v19l-8-7&quot;/&gt;
+
+  &lt;/g&gt;
+&lt;/svg&gt;
+</svg>
+    <textbox x="1280.0" y="156.0" width="266.0" height="52.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Transparent Communication</textbox>
+    <textbox x="1280.0" y="212.0" width="266.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Openly share progress and challenges to build trust.</textbox>
+    <shape type="rounded_rectangle" x="1144" y="387.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="1140" y="381.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="1140" y="381.0" width="9" height="138" fill="#10CFA7" line_color="none"/>
+    <shape type="circle" x="1168.0" y="406.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#10CFA7" line_width="3"/>
+    <svg x="1187.36" y="425.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#10CFA7&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+    
+  &lt;circle cx=&quot;32&quot; cy=&quot;17&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;13&quot; cy=&quot;47&quot; r=&quot;7&quot;/&gt;&lt;circle cx=&quot;51&quot; cy=&quot;47&quot; r=&quot;7&quot;/&gt;
+  &lt;path d=&quot;M32 24v8M13 40v-8h38v8&quot;/&gt;
+  &lt;path d=&quot;M28 17h8M13 43v8M47 47h8&quot;/&gt;
+
+  &lt;/g&gt;
+&lt;/svg&gt;
+</svg>
+    <textbox x="1280.0" y="413.0" width="266.0" height="28.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="1" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Self-Organization</textbox>
+    <textbox x="1280.0" y="445.0" width="266.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Teams manage their own work and problem-solving processes.</textbox>
+    <shape type="rounded_rectangle" x="1144" y="632.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="1140" y="626.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="1140" y="626.0" width="9" height="138" fill="#8A79DA" line_color="none"/>
+    <shape type="circle" x="1168.0" y="651.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#8A79DA" line_width="3"/>
+    <svg x="1187.36" y="670.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
+&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#8A79DA&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+    
+  &lt;path d=&quot;M50 21A21 21 0 0 0 14 17&quot;/&gt;&lt;path d=&quot;M14 17V7M14 17h10&quot;/&gt;
+  &lt;path d=&quot;M14 43a21 21 0 0 0 36 4&quot;/&gt;&lt;path d=&quot;M50 47v10M50 47H40&quot;/&gt;
   &lt;path d=&quot;M25 25h14v14H25z&quot;/&gt;
 
   &lt;/g&gt;
 &lt;/svg&gt;
 </svg>
-    <textbox x="986.0" y="306.0" width="486.0" height="40" font="Arial" size="18" min_font_size="13" color="#000000" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Iteration</textbox>
-    <textbox x="986.0" y="348.0" width="486.0" height="51.0" font="Arial" size="14" min_font_size="9.5" color="#111111" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="shrink" reflow_on_resize="true" line_spacing="1.02" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">New features are developed in small, usable increments.</textbox>
-    <shape type="rounded_rectangle" x="855" y="497.0" width="650" height="120" fill="#DDE1E6" line_color="none"/>
-    <shape type="rounded_rectangle" x="850" y="490.0" width="650" height="120" fill="#FFFFFF" line_color="#E2E5E9" line_width="1"/>
-    <shape type="rounded_rectangle" x="850" y="490.0" width="10" height="120" fill="#12CDA5" line_color="none"/>
-    <shape type="circle" x="878.0" y="510.0" width="80.0" height="80.0" fill="#F8FAFC" line_color="#12CDA5" line_width="3"/>
-    <svg x="895.6" y="527.6" width="44.800000000000004" height="44.800000000000004" pixel_width="120" pixel_height="120">
+    <textbox x="1280.0" y="658.0" width="266.0" height="28.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="1" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Adaptability</textbox>
+    <textbox x="1280.0" y="690.0" width="266.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">The team can pivot quickly based on new information.</textbox>
+    <shape type="rounded_rectangle" x="34" y="632.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="30" y="626.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="451" y="626.0" width="9" height="138" fill="#4699E7" line_color="none"/>
+    <shape type="circle" x="344.0" y="651.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#4699E7" line_width="3"/>
+    <svg x="363.36" y="670.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
 &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
-  &lt;g fill=&quot;none&quot; stroke=&quot;#12CDA5&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#4699E7&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
     
-  &lt;path d=&quot;M9 15h33a5 5 0 0 1 5 5v18a5 5 0 0 1-5 5H25L14 52v-9H9a5 5 0 0 1-5-5V20a5 5 0 0 1 5-5z&quot;/&gt;
-  &lt;path d=&quot;M16 28h20M16 35h13&quot;/&gt;
-  &lt;path d=&quot;M45 48h5l8 7v-20a5 5 0 0 0-5-5h-2&quot;/&gt;
+  &lt;circle cx=&quot;30&quot; cy=&quot;32&quot; r=&quot;20&quot;/&gt;&lt;circle cx=&quot;30&quot; cy=&quot;32&quot; r=&quot;11&quot;/&gt;&lt;circle cx=&quot;30&quot; cy=&quot;32&quot; r=&quot;3&quot;/&gt;
+  &lt;path d=&quot;M42 20L57 5M48 5h9v9&quot;/&gt;
 
   &lt;/g&gt;
 &lt;/svg&gt;
 </svg>
-    <textbox x="986.0" y="506.0" width="486.0" height="40" font="Arial" size="18" min_font_size="13" color="#000000" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Feedback</textbox>
-    <textbox x="986.0" y="548.0" width="486.0" height="51.0" font="Arial" size="14" min_font_size="9.5" color="#111111" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="shrink" reflow_on_resize="true" line_spacing="1.02" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Customer feedback is continuously integrated into the development.</textbox>
-    <shape type="rounded_rectangle" x="855" y="697.0" width="650" height="120" fill="#DDE1E6" line_color="none"/>
-    <shape type="rounded_rectangle" x="850" y="690.0" width="650" height="120" fill="#FFFFFF" line_color="#E2E5E9" line_width="1"/>
-    <shape type="rounded_rectangle" x="850" y="690.0" width="10" height="120" fill="#18B7CF" line_color="none"/>
-    <shape type="circle" x="878.0" y="710.0" width="80.0" height="80.0" fill="#F8FAFC" line_color="#18B7CF" line_width="3"/>
-    <svg x="895.6" y="727.6" width="44.800000000000004" height="44.800000000000004" pixel_width="120" pixel_height="120">
+    <textbox x="54.0" y="658.0" width="268.0" height="28.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="right" vertical_align="middle" single_line="false" max_lines="1" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Customer Focus</textbox>
+    <textbox x="54.0" y="690.0" width="268.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="right" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">The team's primary goal is to deliver value to the customer.</textbox>
+    <shape type="rounded_rectangle" x="34" y="387.0" width="430" height="138" fill="#DFE3E8" line_color="none"/>
+    <shape type="rounded_rectangle" x="30" y="381.0" width="430" height="138" fill="#FBFBFC" line_color="#E2E6EA" line_width="1"/>
+    <shape type="rounded_rectangle" x="451" y="381.0" width="9" height="138" fill="#15B7CF" line_color="none"/>
+    <shape type="circle" x="344.0" y="406.0" width="88.0" height="88.0" fill="#FFFFFF" line_color="#15B7CF" line_width="3"/>
+    <svg x="363.36" y="425.36" width="49.28" height="49.28" pixel_width="120" pixel_height="120">
 &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; viewBox=&quot;0 0 64 64&quot;&gt;
-  &lt;g fill=&quot;none&quot; stroke=&quot;#18B7CF&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
+  &lt;g fill=&quot;none&quot; stroke=&quot;#15B7CF&quot; stroke-width=&quot;2.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;&gt;
     
-  &lt;path d=&quot;M9 21l23-12 23 12-23 12z&quot;/&gt;
-  &lt;path d=&quot;M9 21v25l23 12 23-12V21&quot;/&gt;
-  &lt;path d=&quot;M32 33v25&quot;/&gt;
-  &lt;path d=&quot;M21 18l23 12&quot;/&gt;
-  &lt;path d=&quot;M42 43l5 5 10-12&quot;/&gt;
+  &lt;path d=&quot;M8 20L32 8l24 12-24 12zM8 20v25l24 12 24-12V20M32 32v25&quot;/&gt;
+  &lt;path d=&quot;M40 43l5 5 11-13&quot;/&gt;
 
   &lt;/g&gt;
 &lt;/svg&gt;
 </svg>
-    <textbox x="986.0" y="706.0" width="486.0" height="40" font="Arial" size="18" min_font_size="13" color="#000000" bold="true" italic="false" align="left" vertical_align="middle" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Delivery</textbox>
-    <textbox x="986.0" y="748.0" width="486.0" height="51.0" font="Arial" size="14" min_font_size="9.5" color="#111111" bold="false" italic="false" align="left" vertical_align="top" single_line="false" max_lines="3" overflow="shrink" reflow_on_resize="true" line_spacing="1.02" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">The team releases usable products frequently.</textbox>
+    <textbox x="54.0" y="413.0" width="268.0" height="28.0" font="Arial" size="17" min_font_size="12.5" color="#1A1A1A" bold="true" italic="false" align="right" vertical_align="middle" single_line="false" max_lines="1" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Iterative Delivery</textbox>
+    <textbox x="54.0" y="445.0" width="268.0" height="42.0" font="Arial" size="13" min_font_size="9.5" color="#1A1A1A" bold="false" italic="false" align="right" vertical_align="top" single_line="false" max_lines="2" overflow="shrink" reflow_on_resize="true" line_spacing="1.0" margin_left="0" margin_right="0" margin_top="0" margin_bottom="0">Projects are broken into small, manageable cycles.</textbox>
   </slide>
 </presentation>
