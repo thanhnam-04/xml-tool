@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import argparse
 import os
+import shutil
 import subprocess
+import sys
 import tempfile
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -60,6 +62,36 @@ class XMLSlideConverter:
                 r"C:\Program Files\Google\Chrome\Application\chrome.exe"
             ),
         ]
+
+        if os.name == "posix":
+            candidates.extend(
+                [
+                    Path(
+                        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+                    ),
+                    Path(
+                        "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge"
+                    ),
+                    Path(
+                        "/Applications/Chromium.app/Contents/MacOS/Chromium"
+                    ),
+                ]
+            )
+
+            for command in ("google-chrome", "chromium", "chromium-browser"):
+                executable = shutil.which(command)
+                if executable:
+                    candidates.append(Path(executable))
+
+            # Playwright's browser download is usable even when Chrome is not
+            # installed as a macOS application.
+            candidates.extend(
+                Path.home().glob(
+                    "Library/Caches/ms-playwright/chromium-*/"
+                    "chrome-mac-*/Google Chrome for Testing.app/Contents/MacOS/"
+                    "Google Chrome for Testing"
+                )
+            )
 
         local_appdata = os.environ.get("LOCALAPPDATA")
         if local_appdata:
@@ -1129,7 +1161,12 @@ if ($closed) {
         self.prs.save(self.output_path)
         if self.open_after_convert:
             try:
-                os.startfile(str(self.output_path))
+                if hasattr(os, "startfile"):
+                    os.startfile(str(self.output_path))
+                elif sys.platform == "darwin":
+                    subprocess.Popen(["open", str(self.output_path)])
+                else:
+                    subprocess.Popen(["xdg-open", str(self.output_path)])
             except OSError as exc:
                 print(f"Khong the mo file: {exc}")
         print(f"Đã tạo: {self.output_path}")
